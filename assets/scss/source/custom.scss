@@ -1,0 +1,45 @@
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,300;8..144,600;8..144,700&display=swap');
+
+* {
+    font-family: 'Roboto Flex', sans-serif;
+}
+
+header {
+    min-height: 10vh;
+    border-bottom: 1px solid #e2e2e2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $primary-color;
+    box-shadow: 0 10px 30px 0 rgb(194 242 254 / 40%);
+}
+
+
+.container { 
+    box-sizing: border-box;
+   }
+
+div#formFooter ol {
+    list-style: none;
+    padding: 0;
+}
+
+#formContent #formFooter {
+    padding: 10px;
+}
+
+footer {
+    min-height: 8vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #939393;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
