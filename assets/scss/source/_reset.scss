@@ -1,0 +1,60 @@
+div,
+* {
+    font-family: 'Lato', 'Rufina', sans-serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    font-family: 'Rufina', 'Dancing Script', cursive;
+}
+
+p {
+    padding-bottom: 0.5em;
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+        margin: 0;
+    }
+}
+
+html,
+body {
+    font-size: 16px;
+}
+
+a:focus,
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+a:active,
+a:focus {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
