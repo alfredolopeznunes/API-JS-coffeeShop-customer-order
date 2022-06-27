@@ -106,9 +106,98 @@ header a.logo::after {
   border-bottom: 2px solid #ffffff;
   top: 117px;
 }
-header .nav-menu {
+header .nav-menu .hamburger {
   position: relative;
-  bottom: -6px;
+  z-index: 11;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+header .nav-menu .hamburger:hover ._layer {
+  height: 4px;
+  margin-bottom: 6px;
+}
+header .nav-menu .hamburger:hover .-top {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+header .nav-menu .hamburger:hover .-bottom {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+header .nav-menu .hamburger.is-active ._layer {
+  height: 4px;
+  margin-bottom: 6px;
+}
+header .nav-menu .hamburger.is-active .-top {
+  -webkit-transform: translateY(200%) rotate(45deg) !important;
+  -ms-transform: translateY(200%) rotate(45deg) !important;
+  transform: translateY(200%) rotate(45deg) !important;
+}
+header .nav-menu .hamburger.is-active .-mid {
+  opacity: 0;
+}
+header .nav-menu .hamburger.is-active .-bottom {
+  -webkit-transform: translateY(-200%) rotate(135deg) !important;
+  -ms-transform: translateY(-200%) rotate(135deg) !important;
+  transform: translateY(-200%) rotate(135deg) !important;
+}
+header .nav-menu .hamburger.is-active:hover ._layer {
+  background: red;
+}
+header .nav-menu .hamburger ._layer {
+  background: #ffffff;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  width: 30px;
+  height: 2px;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+header .nav-menu .menuppal {
+  display: none;
+}
+header .nav-menu .menuppal.is_active {
+  display: block;
+  position: absolute;
+  width: 18rem;
+  z-index: 10;
+  transform: translate3d(-30px, 0px, 0px);
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+  -webkit-box-shadow: 0px 6px 10px 1px #000;
+  box-shadow: 0px 6px 10px 1px #000;
+  border: 1px solid #ffbe33;
+  border-radius: 3px;
+}
+header .nav-menu .menuppal.is_active ul {
+  margin: 0;
+  padding: 0;
+}
+header .nav-menu .menuppal.is_active ul li {
+  list-style: none;
+  text-align: center;
+  color: #000;
+  font-size: 1.3rem;
+  text-transform: none;
+  font-weight: bold;
+}
+header .nav-menu .menuppal.is_active ul li a {
+  color: #000 !important;
+}
+header .nav-menu .menuppal.is_active ul li a:hover {
+  color: #e69c00 !important;
 }
 header .btn {
   padding: 0.8rem 2rem;
@@ -127,11 +216,20 @@ header .btn.button-primary:hover {
   border: 1px solid #e69c00;
 }
 
-@media (min-width: 64rem) {
+@media screen and (min-width: 64rem) {
   header.header {
     padding-inline: 6rem !important;
   }
 }
+footer {
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  width: 100%;
+  background: #100f0f;
+  color: #ffffff;
+}
+
 main .wrapper .banner-principal {
   background-image: url("../../images/banner-principal.jpg");
   background-position: center;
@@ -148,19 +246,23 @@ main .wrapper .banner-principal .texto-banner:first-child .banner-llamado {
 }
 main .wrapper .banner-principal .texto-banner:first-child .banner-llamado h2 {
   font-size: 9.25rem;
+  font-weight: 700;
+  line-height: 152px;
 }
 main .wrapper .banner-principal .texto-banner:first-child .banner-llamado p {
   font-family: "Rufina";
   font-size: 2rem;
+  font-weight: 700;
+  line-height: 48px;
 }
 main .wrapper .banner-principal .texto-banner:last-child {
   position: relative;
-  top: 30rem;
+  top: 31rem;
   width: 100%;
   padding-right: 6.5rem;
 }
 main .wrapper .banner-principal .texto-banner:last-child .horarios {
-  width: 43.75rem;
+  width: 38.2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -175,7 +277,7 @@ main .wrapper .banner-principal .texto-banner:last-child .horarios span {
   font-size: 1.625rem;
 }
 main .wrapper .banner-principal .texto-banner:last-child .horarios-comidas {
-  width: 43.75rem;
+  width: 38.2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -187,14 +289,26 @@ main .wrapper .banner-principal .texto-banner:last-child .horarios-comidas li {
   flex-direction: column;
   font-size: 1.5rem;
 }
-
-footer {
-  justify-content: center;
+main .wrapper .carta-entradas {
+  background-image: url("../../images/Blueberry.png");
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  min-height: 10vh;
-  width: 100%;
-  background: #100f0f;
-  color: #ffffff;
+}
+main .wrapper .carta-entradas h2 {
+  font-size: 6.75rem;
+  font-weight: 700;
+  line-height: 120px;
+}
+main .wrapper .carta-entradas p {
+  font-size: 1.5rem;
+  line-height: 140%;
+  font-style: normal;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=custom.css.map */
