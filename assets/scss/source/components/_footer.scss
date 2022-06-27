@@ -1,0 +1,7 @@
+footer {
+    @include flex-center;
+    min-height: 10vh;
+    width: 100%;
+    background: $bg-footer;
+    color: $color-white;
+}

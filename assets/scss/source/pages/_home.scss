@@ -1,0 +1,93 @@
+main {
+    .wrapper {
+        .banner-principal {
+            background-image: url('../../images/banner-principal.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 67.5rem;
+
+            .texto-banner {
+                &:first-child {
+                    position: relative;
+                    top: 20rem;
+
+                    .banner-llamado {
+                        padding-left: 8rem;
+
+                        h2 {
+                            font-size: $font148px;
+                            font-weight: 700;
+                            line-height: 152px;
+                        }
+
+                        p {
+                            @include rufina;
+                            font-size: $font32px;
+                            font-weight: 700;
+                            line-height: 48px;
+                        }
+                    }
+                }
+                &:last-child {
+                    position: relative;
+                    top: 31rem;
+                    width: 100%;
+                    padding-right: 6.5rem;
+
+                    .horarios {
+                        width: 38.2rem;
+                        @include flex-row;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 3px dotted;
+
+                        strong {
+                            @include rufina;
+                            font-size: $font32px;
+                        }
+                        span {
+                            font-size: $font26px;
+                        }
+                    }
+
+                    .horarios-comidas {
+                        width: 38.2rem;
+                        @include flex-row;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-left: 0;
+
+                        li {
+                            @include flex-col;
+                            font-size: $font24px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .carta-entradas {
+            background-image: url('../../images/Blueberry.png');
+            background-position: right;
+            background-size: contain;
+            background-repeat: no-repeat;
+            min-height: 20rem;
+            @include flex-col;
+            align-items: center;
+
+            h2 {
+                font-size: $font108px;
+                font-weight: 700;
+                line-height: 120px;
+            }
+
+            p {
+                font-size: $font24px;
+                line-height: 140%;
+                font-style: normal;
+                font-weight: 400;
+            }
+        }
+    }
+}
