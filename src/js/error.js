@@ -1,15 +1,15 @@
-import { msjResponse } from "./app.js";
+// import { msjResponse } from "./menu.js";
 
-function errorApi(error) {
+// function errorApi(error) {
     
-    msjResponse.classList.add('error', 'alert-danger', 'show');
-    msjResponse.innerHTML = `Usuario y/o contraseña invalidos`;
-    console.error(error);
+//     msjResponse.classList.add('error', 'alert-danger', 'show');
+//     msjResponse.innerHTML = `Usuario y/o contraseña invalidos`;
+//     console.error(error);
     
-    setTimeout(() => {
-        msjResponse.classList.remove('error', 'alert-danger', 'show');
-    }, 4000);
-}
+//     setTimeout(() => {
+//         msjResponse.classList.remove('error', 'alert-danger', 'show');
+//     }, 4000);
+// }
 
 
-export { errorApi }
+// export { errorApi }

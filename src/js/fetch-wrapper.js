@@ -1,3 +1,4 @@
+//import { errorApi } from "./error.js";
 export default class FetchWrapper {
     constructor(baseURL) {
         this.baseURL = baseURL;
@@ -27,6 +28,10 @@ export default class FetchWrapper {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(body)
-        }).then(response => response.json());
+        })
+        .then(response => response.json())
+        .catch(error => {
+            //errorApi(error);
+        });
     }
 }
