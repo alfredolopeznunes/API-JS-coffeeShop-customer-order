@@ -1,4 +1,9 @@
 class Header extends HTMLElement {
+
+    //const itemMenu = `<li><a href="#${key}" class="nav-link px-2 text-white">${key.toLowerCase}</a></li>`;
+
+    
+
     connectedCallback() {
         this.innerHTML = `
         <header class="header p-4">
@@ -17,12 +22,12 @@ class Header extends HTMLElement {
                             <div class="menuppal">
                                 <ul class="menu-lista">
                                     <li><a href="#entradas" class="nav-link px-2 text-secondary">Entradas</a></li>
-                                    <li><a href="#fondo" class="nav-link px-2 text-white">Platos de fondo</a></li>
+                                    <li><a href="#fondo" class="nav-link px-2 text-white">Platos de Fondo</a></li>
                                     <li><a href="#sandwichs" class="nav-link px-2 text-secondary">Sandwiches</a></li>
                                     <li><a href="#ensaladas" class="nav-link px-2 text-secondary">Ensaladas</a></li>
                                     <li><a href="#agregados" class="nav-link px-2 text-secondary">Agregados</a></li>
                                     <li><a href="#postres" class="nav-link px-2 text-secondary">Postres</a></li>
-                                    <li><a href="#jugos-bebidas" class="nav-link px-2 text-white">Jugos y bebidas</a></li>
+                                    <li><a href="#jugos-bebidas" class="nav-link px-2 text-white">Para Beber</a></li>
                                 </ul>
                             </div>
                         </nav>
