@@ -67,14 +67,24 @@ main {
             }
         }
 
-        .carta-entradas {
-            background-image: url('../../images/Blueberry.png');
-            background-position: right;
-            background-size: contain;
-            background-repeat: no-repeat;
-            min-height: 20rem;
+        .carta {
             @include flex-col;
             align-items: center;
+            padding-inline: $margen-seguro;
+
+            &.carta-entradas {
+                background-image: url('../../images/Blueberry.png');
+                background-position: top right;
+                background-size: 25% auto;
+                background-repeat: no-repeat;
+            }
+
+            &.carta-jugos-bebidas {
+                background-image: url('../../images/avocado.png');
+                background-position: top center;
+                background-size: 16% auto;
+                background-repeat: no-repeat;
+            }
 
             h2 {
                 font-size: $font108px;
@@ -87,6 +97,48 @@ main {
                 line-height: 140%;
                 font-style: normal;
                 font-weight: 400;
+            }
+
+            .listado-menu {
+                .item-lista {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-column-gap: 40px;
+                    grid-row-gap: 50px;
+    
+                    .item-img {
+                        img {
+                            object-fit: cover;
+                            width: 42vw;
+                            height: 350px;
+                        }
+                    }
+    
+                    .item-info {
+                        .item-price {
+                            width: 100%;
+                            display: flex;
+                            justify-content: flex-end;
+                            border-bottom: 3px dotted;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: $font48px;
+                            line-height: 64px;
+                        }
+                        .item-name {
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: $font68px;
+                            line-height: 84px;
+                        }
+                        .item-description {
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: $font24px;
+                            line-height: 140%;
+                        }
+                    }
+                }
             }
         }
     }

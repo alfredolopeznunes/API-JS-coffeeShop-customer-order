@@ -67,9 +67,9 @@ header {
   width: 100%;
   position: fixed;
   transition: background 0.7s, box-shadow 0.7s;
+  z-index: 9;
 }
 header.scroll-active {
-  z-index: 9;
   padding-bottom: 2rem !important;
   background-color: rgba(16, 15, 15, 0.968627451);
   -webkit-box-shadow: 0px 2px 5px 0px rgba(199, 199, 199, 0.3);
@@ -172,9 +172,9 @@ header .nav-menu .menuppal.is_active {
   display: block;
   position: absolute;
   width: 18rem;
-  z-index: 10;
+  z-index: 12;
   transform: translate3d(-30px, 0px, 0px);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.98);
   transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
   -webkit-box-shadow: 0px 6px 10px 1px #000;
   box-shadow: 0px 6px 10px 1px #000;
@@ -289,26 +289,67 @@ main .wrapper .banner-principal .texto-banner:last-child .horarios-comidas li {
   flex-direction: column;
   font-size: 1.5rem;
 }
-main .wrapper .carta-entradas {
-  background-image: url("../../images/Blueberry.png");
-  background-position: right;
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 20rem;
+main .wrapper .carta {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-inline: 6rem !important;
 }
-main .wrapper .carta-entradas h2 {
+main .wrapper .carta.carta-entradas {
+  background-image: url("../../images/Blueberry.png");
+  background-position: top right;
+  background-size: 25% auto;
+  background-repeat: no-repeat;
+}
+main .wrapper .carta.carta-jugos-bebidas {
+  background-image: url("../../images/avocado.png");
+  background-position: top center;
+  background-size: 16% auto;
+  background-repeat: no-repeat;
+}
+main .wrapper .carta h2 {
   font-size: 6.75rem;
   font-weight: 700;
   line-height: 120px;
 }
-main .wrapper .carta-entradas p {
+main .wrapper .carta p {
   font-size: 1.5rem;
   line-height: 140%;
   font-style: normal;
   font-weight: 400;
+}
+main .wrapper .carta .listado-menu .item-lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 50px;
+}
+main .wrapper .carta .listado-menu .item-lista .item-img img {
+  object-fit: cover;
+  width: 42vw;
+  height: 350px;
+}
+main .wrapper .carta .listado-menu .item-lista .item-info .item-price {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 3px dotted;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 64px;
+}
+main .wrapper .carta .listado-menu .item-lista .item-info .item-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4.25rem;
+  line-height: 84px;
+}
+main .wrapper .carta .listado-menu .item-lista .item-info .item-description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 140%;
 }
 
 /*# sourceMappingURL=custom.css.map */

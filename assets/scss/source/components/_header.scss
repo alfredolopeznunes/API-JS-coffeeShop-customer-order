@@ -7,9 +7,9 @@ header {
     width: 100%;
     position: fixed;
     transition: background 0.7s, box-shadow 0.7s;
+    z-index: 9;
 
     &.scroll-active {
-        z-index: 9;
         padding-bottom: 2rem !important;
         background-color: $bg-header;
         -webkit-box-shadow: 0px 2px 5px 0px rgb(199 199 199 / 30%); 
@@ -134,9 +134,9 @@ header {
                 display: block;                
                 position: absolute;
                 width: 18rem;
-                z-index: 10;
+                z-index: 12;
                 transform: translate3d(-30px, 0px, 0px);
-                background-color: rgba(255, 255, 255, 0.95);
+                background-color: rgba(255, 255, 255, 0.98);
                 transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
                 -webkit-box-shadow: 0px 6px 10px 1px $color-black; 
                 box-shadow: 0px 6px 10px 1px $color-black;
@@ -190,6 +190,6 @@ header {
 // desktop min 1024px
 @media screen and (min-width: 64rem) {
     header.header {
-        padding-inline: 6rem !important;
+        padding-inline: $margen-seguro;
     }
 }
