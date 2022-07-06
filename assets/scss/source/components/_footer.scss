@@ -1,7 +1,74 @@
-footer {
-    @include flex-center;
-    min-height: 10vh;
+footer.footer {
+    @include flex-row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    min-height: 20vh;
     width: 100%;
     background: $bg-footer;
     color: $color-white;
+
+    .logo-footer {
+        @include flex-col;
+        align-items: center;
+
+        a {
+            @include flex-col;
+            align-items: center;
+            min-width: 307px;
+            
+            &::before, &::after {
+                content: '';
+                border-left: $border-2px-solid-white;
+                border-right: $border-2px-solid-white;
+                height: 22px;
+                width: 196px;
+                position: relative;
+            }
+            &::before {
+                border-top: $border-2px-solid-white;
+                bottom: -5px;
+            }
+    
+            &::after {
+                border-bottom: $border-2px-solid-white;
+                bottom: -8px;
+            }
+
+            img {
+                min-width: 307px;
+            }
+        }
+    }
+
+    .copyright {
+        @include flex-col;
+        align-items: center;
+
+        h5 {
+            font-family: 'Dancing Script';
+            font-size: $font32px;
+        }
+
+        ul.rrss-list {
+            @include flex-row;
+            @include flex-center;
+            padding-left: 0;
+
+            a {
+                background-color: $color-white;
+                padding: 0px;
+                display: block;
+                border-radius: 4px;
+
+                &:hover {
+                    background-color: $primary-color-hover;
+                }
+
+                img {
+                    max-width: 70px;
+                    height: auto;
+                }
+            }
+        }
+    } 
 }

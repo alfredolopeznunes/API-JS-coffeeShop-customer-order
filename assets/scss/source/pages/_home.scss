@@ -86,6 +86,10 @@ main {
                 background-repeat: no-repeat;
             }
 
+            &:last-child {
+                margin-bottom: 2rem;
+            }
+
             h2 {
                 font-size: $font108px;
                 font-weight: 700;
@@ -180,8 +184,8 @@ main {
                         padding: 0.2rem 2rem;
 
                         &:hover {
-                            color: $primary-color-hover;
-                            border: 1px solid $primary-color-hover;
+                            color: $secondary-color-hover;
+                            border: 1px solid $secondary-color-hover;
                         }
 
                         &:focus {

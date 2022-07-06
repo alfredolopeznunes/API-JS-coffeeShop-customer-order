@@ -62,6 +62,103 @@ img {
   height: auto;
 }
 
+/* ANIMATIONS */
+/* Simple CSS3 Fade-in-down Animation */
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
 header {
   min-height: 10vh;
   width: 100%;
@@ -221,13 +318,74 @@ header .btn.button-primary:hover {
     padding-inline: 6rem !important;
   }
 }
-footer {
-  justify-content: center;
-  align-items: center;
-  min-height: 10vh;
+footer.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  min-height: 20vh;
   width: 100%;
   background: #100f0f;
   color: #ffffff;
+}
+footer.footer .logo-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer.footer .logo-footer a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 307px;
+}
+footer.footer .logo-footer a::before, footer.footer .logo-footer a::after {
+  content: "";
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  height: 22px;
+  width: 196px;
+  position: relative;
+}
+footer.footer .logo-footer a::before {
+  border-top: 2px solid #ffffff;
+  bottom: -5px;
+}
+footer.footer .logo-footer a::after {
+  border-bottom: 2px solid #ffffff;
+  bottom: -8px;
+}
+footer.footer .logo-footer a img {
+  min-width: 307px;
+}
+footer.footer .copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer.footer .copyright h5 {
+  font-family: "Dancing Script";
+  font-size: 2rem;
+}
+footer.footer .copyright ul.rrss-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+}
+footer.footer .copyright ul.rrss-list a {
+  background-color: #ffffff;
+  padding: 0px;
+  display: block;
+  border-radius: 4px;
+}
+footer.footer .copyright ul.rrss-list a:hover {
+  background-color: #e69c00;
+}
+footer.footer .copyright ul.rrss-list a img {
+  max-width: 70px;
+  height: auto;
 }
 
 main .wrapper .banner-principal {
@@ -306,6 +464,9 @@ main .wrapper .carta.carta-jugos-bebidas {
   background-position: top center;
   background-size: 16% auto;
   background-repeat: no-repeat;
+}
+main .wrapper .carta:last-child {
+  margin-bottom: 2rem;
 }
 main .wrapper .carta h2 {
   font-size: 6.75rem;
@@ -397,8 +558,8 @@ main .wrapper .carta .listado-menu .show-more button.btn {
   padding: 0.2rem 2rem;
 }
 main .wrapper .carta .listado-menu .show-more button.btn:hover {
-  color: #e69c00;
-  border: 1px solid #e69c00;
+  color: #F24822;
+  border: 1px solid #F24822;
 }
 main .wrapper .carta .listado-menu .show-more button.btn:focus {
   box-shadow: none;
