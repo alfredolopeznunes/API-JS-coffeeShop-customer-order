@@ -31,7 +31,7 @@ export default class FetchWrapper {
         })
         .then(response => response.json())
         .catch(error => {
-            //errorApi(error);
+            console.log(error);
         });
     }
 }
