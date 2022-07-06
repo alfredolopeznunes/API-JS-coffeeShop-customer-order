@@ -1,11 +1,7 @@
 import { API } from "./globals.js";
-//import { errorApi } from "./error.js";
-//import { successApi } from "./success.js";
-
 
 //break point
 const breakPoint = 'api/menus';
-
 
 //metodo get de la instancia
 const getCarta = () => {
@@ -31,12 +27,12 @@ const mostrarCarta = (elementos) => {
                      : key[0].toUpperCase() + key.substring(1).toLowerCase() 
                     }
                 </h2>
-                <p class="mb-5">Somos los mejores en la gastronomía Chilena y tenemos lo mejor en ${ 
-                    key == 'fondo' ? 'Platos de ' + key[0].toUpperCase() + key.substring(1).toLowerCase() 
-                    : key == 'jugos-bebidas' ? 'Para Beber'
-                    : key[0].toUpperCase() + key.substring(1).toLowerCase() 
+                <p class="mb-5">Somos los mejores en gastronomía Chilena y tenemos lo mejor en ${ 
+                    key == 'fondo' ? 'Platos de ' + key[0].toUpperCase() + key.substring(1).toLowerCase() + '.' 
+                    : key == 'jugos-bebidas' ? 'Bebestibles.'
+                    : key[0].toUpperCase() + key.substring(1).toLowerCase() + '.' 
                     }
-                .</p>
+                </p>
                 <div id="${key}-listado" class="listado-menu"></div>
             </div>`;
         menuItems.insertAdjacentHTML("beforeend", keyId);
@@ -68,7 +64,7 @@ const mostrarCarta = (elementos) => {
 
     
     //funcionalidad del boton ver mas
-    const botones = document.querySelectorAll('.show-more .btn')
+    const botones = document.querySelectorAll('.show-more .btn');
     
     botones.forEach(boton => {
         boton.addEventListener("click", event => {
@@ -82,9 +78,11 @@ const mostrarCarta = (elementos) => {
                 if(hijo.classList.contains('d-none')) {
                     hijo.classList.remove('d-none');
                     hijo.classList.add('d-grid');
+                    event.currentTarget.textContent = 'Ver menos';
                 } else if(hijo.classList.contains('d-grid')) {
                     hijo.classList.remove('d-grid');
                     hijo.classList.add('d-none');
+                    event.currentTarget.textContent = 'Ver más';
                 } 
             })
         })
