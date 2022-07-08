@@ -1,4 +1,4 @@
-import { msjResponse } from "./menu.js";
+import { msjResponse } from "../pages/menu.js";
 
 function successApi() {
     

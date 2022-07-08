@@ -1,10 +1,29 @@
-import { API } from "./globals.js";
+import { API } from "../globals.js";
+import { pintarBanner } from "../components/banner.js";
 
 //break point
 const breakPoint = 'api/menus';
 
 //metodo get de la instancia
-const getCarta = () => {
+const getCarta = (appClase) => {
+
+    let tituloBanner = 'MENÚ';
+    let msjBanner = 'Conoce nuestra variada carta';
+    let htmlAdicional = `
+    <div class="texto-banner text-white d-flex flex-column align-items-end">
+        <div class="horarios pb-5">
+            <strong>OPEN Time</strong>
+            <span>Sunday - Friday</span>
+        </div>
+        <ul class="horarios-comidas text-white pt-5">
+            <li><span>Brunch</span><span>11:00-12:00</span></li>
+            <li><span>Lunch</span><span>13:00-17:00</span></li>
+            <li><span>Dinner</span><span>18:00-20:00</span></li>
+        </ul>
+    </div>`;
+    let claseBanner = appClase;
+
+    pintarBanner(tituloBanner, msjBanner, htmlAdicional, claseBanner);
     
     API.get(breakPoint).then(data => {
         mostrarCarta(data);
@@ -16,7 +35,7 @@ const getCarta = () => {
 //Pinta el menu
 const mostrarCarta = (elementos) => {
     
-    const menuItems = document.querySelector('.menu-items');
+    const appDom = document.querySelector('#app');
 
     Object.keys(elementos).forEach(key => {
         const keyId = `
@@ -35,7 +54,7 @@ const mostrarCarta = (elementos) => {
                 </p>
                 <div id="${key}-listado" class="listado-menu"></div>
             </div>`;
-        menuItems.insertAdjacentHTML("beforeend", keyId);
+        appDom.insertAdjacentHTML("beforeend", keyId);
         listadoMenu(key);
     });
     
@@ -76,12 +95,12 @@ const mostrarCarta = (elementos) => {
             arrHijos.forEach(hijo => {
                 
                 if(hijo.classList.contains('d-none')) {
-                    hijo.classList.remove('d-none');
-                    hijo.classList.add('d-grid');
+                    hijo?.classList.remove('d-none',);
+                    hijo?.classList.add('d-grid', 'fadeIn');
                     event.currentTarget.textContent = 'Ver menos';
                 } else if(hijo.classList.contains('d-grid')) {
-                    hijo.classList.remove('d-grid');
-                    hijo.classList.add('d-none');
+                    hijo.classList.remove('d-grid', 'fadeIn');
+                    hijo?.classList.add('d-none');
                     event.currentTarget.textContent = 'Ver más';
                 } 
             })
@@ -91,7 +110,5 @@ const mostrarCarta = (elementos) => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    getCarta();
-});
+export { getCarta }
 
