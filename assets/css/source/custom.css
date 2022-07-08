@@ -513,4 +513,22 @@ main .wrapper .carta .listado-menu .show-more button.btn:focus {
   box-shadow: none;
 }
 
+main .wrapper .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .wrapper .login.login-background-img {
+  background-image: url("../../../../assets/images/mint-login.png");
+  background-position: top left;
+  background-size: 25% auto;
+  background-repeat: no-repeat;
+  margin-top: 2rem;
+}
+main .wrapper .login.login-background-img h2 {
+  font-size: 6.75rem;
+  font-weight: 700;
+  line-height: 120px;
+}
+
 /*# sourceMappingURL=custom.css.map */
