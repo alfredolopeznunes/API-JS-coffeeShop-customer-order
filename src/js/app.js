@@ -8,11 +8,7 @@ const startApp = document.querySelector('#start-app');
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    if(startApp.dataset.appStart === 'menu-app') {
-        getCarta(startApp.dataset.appStart);
-
-    } else if(startApp.dataset.appStart === 'login-app') {
-        getLogin(startApp.dataset.appStart);
-    }
+    startApp.dataset.appStart === 'menu-app'  ?  getCarta(startApp.dataset.appStart) : 
+    startApp.dataset.appStart === 'login-app' ? getLogin(startApp.dataset.appStart) : ''
     
 });
