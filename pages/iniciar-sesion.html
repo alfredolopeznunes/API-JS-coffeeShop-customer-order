@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FoodZero - Iniciar Sesión</title>
+        <title>FoodZero - Pleasure of good food</title>
         <link rel="icon" type="image/png" href="../assets/images/restaurante-64-color.png">
         
         <!-- CSS -->
@@ -18,27 +18,12 @@
 
     <main class="container-fluid p-0">
         <section class="wrapper">
-            <div class="banner-principal">
-                <div class="texto-banner text-white">
-                    <div class="banner-llamado">
-                        <h2>MENÚ</h2>
-                        <p class="mt-4">Conoce nuestra variada carta</p>
-                    </div>
-                </div>
-                <div class="texto-banner text-white d-flex flex-column align-items-end">
-                    <div class="horarios pb-5">
-                        <strong>OPEN Time</strong>
-                        <span>Sunday - Friday</span>
-                    </div>
-                    <ul class="horarios-comidas text-white pt-5">
-                        <li><span>Brunch</span><span>11:00-12:00</span></li>
-                        <li><span>Lunch</span><span>13:00-17:00</span></li>
-                        <li><span>Dinner</span><span>18:00-20:00</span></li>
-                    </ul>
-                </div>
-            </div>
 
-                       
+            <!-- pintar banner principal -->
+            <div class="banner-principal"></div>
+
+            <!-- aqui se pinta el front de la app -->
+            <div id="app"></div>            
 
         </section>
     </main>
@@ -46,7 +31,7 @@
     <footer-template></footer-template>
 
     <script type="module" src="../src/js/components/header.js"></script>
-    
+    <script id="start-app" type="module" src="../src/js/app.js" data-app-start="login-app"></script>
     <script type="module" src="../src/js/components/footer.js"></script>
 </body>
 </html>
