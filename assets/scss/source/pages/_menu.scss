@@ -85,22 +85,7 @@ main {
                     animation-duration: 5s;
                    
                     button.btn {
-                        font-size: $font46px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 64px;
-                        letter-spacing: 0.02em;
-                        border: 1px solid $color-black;
-                        padding: 0.2rem 2rem;
-
-                        &:hover {
-                            color: $secondary-color-hover;
-                            border: 1px solid $secondary-color-hover;
-                        }
-
-                        &:focus {
-                            box-shadow: none;
-                        }
+                        @include boton-primary;
                     }
                 }
             }

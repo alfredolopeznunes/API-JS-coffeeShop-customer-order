@@ -16,6 +16,106 @@ main {
                     font-weight: 700;
                     line-height: 120px;
                 }
+
+                form#user-form {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    margin: 50px 0 0 0;
+
+                    input[type="text"], input[type="password"] {
+                        height: 60px;
+                        margin: 18px 0;
+                        padding: 0 25px;
+
+                        &:focus {
+                            border: 2px solid $primary-color-hover;
+                        }
+                    }
+                    input.btn {
+                        @include boton-primary;
+                        width: 60%;
+                        min-width: 300px;
+                        margin: 30px auto;
+                        background-color: $secondary-color;
+                        color: $color-white;
+
+                        &:hover {
+                            background-color: $color-white;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                .info-user a {
+                    color: $color-black;
+                }
+
+                .modal-window {
+                    position: fixed;
+                    background-color: rgba(65, 70, 75, 0.7);
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 999;
+                    visibility: hidden;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: all 0.3s;
+                    -moz-box-shadow: 0px 0px 5px 1px rgb(87 87 87 / 50%);
+                    box-shadow: 0px 0px 5px 1px rgb(87 87 87 / 50%);
+                    border-radius: 5px;
+
+                    .modal-contenido {
+                        @include flex-col;
+                        align-items: center;
+
+                        ol, ul {
+                            margin: 0;
+
+                            button.btn.add-user {
+                                display: block;
+                                border: 1px solid;
+                                margin: 10px 0;
+                                background-color: #ebebeb;
+                                font-weight: bold;
+
+                                &:hover {
+                                    background-color: #cccccc;
+                                }
+                            }
+                        }
+                    }
+
+                    &:target {
+                      visibility: visible;
+                      opacity: 1;
+                      pointer-events: auto;
+                    }
+                    & > div {
+                        width: 400px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        padding: 1em;
+                        background: $color-white;
+                    }
+                }
+
+                .modal-close {
+                    @include color-secondary;
+                    line-height: 50px;
+                    font-size: $font24px;
+                    font-weight: bold;
+                    position: absolute;
+                    right: 0;
+                    text-align: center;
+                    top: 0;
+                    width: 70px;
+                    text-decoration: none;
+                  }
             }
         }
     }
