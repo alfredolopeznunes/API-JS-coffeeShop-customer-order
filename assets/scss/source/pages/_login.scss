@@ -1,0 +1,22 @@
+main {
+    .wrapper {
+        .login {
+            @include flex-col;
+            align-items: center;
+
+            &.login-background-img {
+                background-image: url('../../../../assets/images/mint-login.png');
+                background-position: top left;
+                background-size: 25% auto;
+                background-repeat: no-repeat;
+                margin-top: 2rem;
+
+                h2 {
+                    font-size: $font108px;
+                    font-weight: 700;
+                    line-height: 120px;
+                }
+            }
+        }
+    }
+}
