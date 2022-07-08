@@ -63,40 +63,6 @@ img {
 }
 
 /* ANIMATIONS */
-/* Simple CSS3 Fade-in-down Animation */
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
 /* Simple CSS3 Fade-in Animation */
 @-webkit-keyframes fadeIn {
   from {
@@ -159,6 +125,7 @@ img {
   animation-delay: 1s;
 }
 
+/* Componentes */
 header {
   min-height: 10vh;
   width: 100%;
@@ -389,11 +356,16 @@ footer.footer .copyright ul.rrss-list a img {
 }
 
 main .wrapper .banner-principal {
-  background-image: url("../../images/banner-principal.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 67.5rem;
+}
+main .wrapper .banner-principal.menu-app {
+  background-image: url("../../images/menu.jpg");
+}
+main .wrapper .banner-principal.login-app {
+  background-image: url("../../images/login.png");
 }
 main .wrapper .banner-principal .texto-banner:first-child {
   position: relative;
@@ -447,11 +419,15 @@ main .wrapper .banner-principal .texto-banner:last-child .horarios-comidas li {
   flex-direction: column;
   font-size: 1.5rem;
 }
+main .wrapper #app {
+  padding-inline: 6rem !important;
+}
+
+/* Pages */
 main .wrapper .carta {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-inline: 6rem !important;
 }
 main .wrapper .carta.carta-entradas {
   background-image: url("../../images/Blueberry.png");
@@ -514,34 +490,6 @@ main .wrapper .carta .listado-menu .item-lista .item-info .item-description {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 140%;
-}
-@keyframes fadeInSlide {
-  0% {
-    opactity: 0;
-    transform: translateY(-100px);
-  }
-  100% {
-    opactity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fadeOutSlideDown {
-  0% {
-    opactity: 0;
-    transform: translateY(0);
-  }
-  100% {
-    opactity: 1;
-    transform: translateY(-100px);
-  }
-}
-main .wrapper .carta .listado-menu .item-lista.d-none {
-  -webkit-animation: fadeOutSlideDown forwards ease-out 150ms;
-  animation: fadeOutSlideDown forwards ease-out 150ms;
-}
-main .wrapper .carta .listado-menu .item-lista.d-grid {
-  -webkit-animation: fadeInSlide forwards ease-in 150ms;
-  animation: fadeInSlide forwards ease-in 150ms;
 }
 main .wrapper .carta .listado-menu .show-more {
   display: flex;

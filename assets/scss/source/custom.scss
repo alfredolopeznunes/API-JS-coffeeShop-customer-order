@@ -1,6 +1,12 @@
-@import 'variables';
+@import '_variables';
 @import '_reset';
 @import '_mixins';
-@import 'components/header';
-@import 'components/footer';
-@import 'pages/home';
+
+/* Componentes */
+@import 'components/_header';
+@import 'components/_footer';
+@import 'components/_banner';
+
+/* Pages */
+@import 'pages/_menu';
+
