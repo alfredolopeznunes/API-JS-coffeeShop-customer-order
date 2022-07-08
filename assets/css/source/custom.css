@@ -618,7 +618,7 @@ main .wrapper .login.login-background-img .modal-window > div {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 1em;
-  background: #ffffff;
+  background: #ffffff; 
 }
 main .wrapper .login.login-background-img .modal-close {
   color: #f22222;
