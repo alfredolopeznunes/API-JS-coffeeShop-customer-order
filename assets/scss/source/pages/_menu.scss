@@ -26,6 +26,8 @@ main {
                 font-size: $font108px;
                 font-weight: 700;
                 line-height: 120px;
+                max-width: 600px;
+                text-align: center;
             }
 
             p {
@@ -39,7 +41,7 @@ main {
                 .item-lista {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
-                    grid-column-gap: 40px;
+                    grid-column-gap: 50px;
                     grid-row-gap: 50px;
     
                     .item-img {
@@ -86,6 +88,23 @@ main {
                    
                     button.btn {
                         @include boton-primary;
+                    }
+                }
+            }
+
+            &:nth-child(even) {
+                .listado-menu {
+                    .item-lista {
+                        .item-img {
+                            grid-column: 2;
+                        }
+                        .item-info {
+                            grid-row: 1;
+                        }
+                    }
+
+                    .show-more {
+                        justify-content: flex-start;
                     }
                 }
             }
