@@ -30,10 +30,11 @@
                 <div class="login login-background-img pt-5 mb-5">
                     <h2 class="pt-5">Acceso Trabajadores</h2>
                     <form id="user-form">
-                        <input type="text" id="login" class="fadeIn second" name="login" autocomplete="current-username" placeholder="Ingrese su usuario">
-                        <input type="password" id="password" class="fadeIn third" name="password" autocomplete="current-password" placeholder="Ingrese su contraseña">
-                        <input type="submit" class="btn fadeIn fourth" value="Iniciar sesión">
-                        <div class="response"></div>
+                        <input type="text" id="login" class="fadeIn second" name="login" autocomplete="current-username" required placeholder="Ingrese su usuario">
+                        <input type="password" id="password" class="fadeIn third" name="password" required autocomplete="current-password" placeholder="Ingrese su contraseña">
+                        <div class="blocked-user"></div>
+                        <input type="submit" id="send-login" class="btn fadeIn fourth" value="Iniciar sesión">
+                        <div class="error"></div>
                     </form>
                     <div class="info-user">
                         <a href="#open-modal">Ver suarios disponibles</a>
@@ -44,7 +45,7 @@
                             <a href="#app" title="Close" class="modal-close">X</a>
                             <h3><u>Lista de usuarios</u></h3>
                             <ol>
-                                <li><strong>Administrador</strong></li>
+                                <li><strong>Tipo administrador</strong></li>
                                 <li>
                                     <p class="text-left">
                                         <strong>usuario:</strong> madonna<br>
@@ -52,7 +53,6 @@
                                         <button class="btn add-user" data-user-name="madonna" data-user-pass="mad0nna">Agregar al formulario</button>
                                     </p>
                                 </li>
-                                <li><strong>Usuarios</strong></li>
                                 <li>
                                     <p>
                                         <strong>usuario:</strong> adalovelace<br>
@@ -60,6 +60,7 @@
                                         <button class="btn add-user" data-user-name="adalovelace" data-user-pass="1234d4">Agregar al formulario</button>
                                     </p>
                                 </li>
+                                <li><strong>Tipo usuario</strong></li>
                                 <li>
                                     <p>
                                         <strong>usuario:</strong> dualipa<br> 
