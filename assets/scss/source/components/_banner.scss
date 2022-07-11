@@ -14,6 +14,31 @@ main {
                 background-image: url('../../images/login.png');
             }
 
+            &.usuarios-app {
+                background-image: url('../../images/usuarios.png');
+            }
+
+            &.ordenes-app {
+                background-image: url('../../images/ordenes.png');
+
+                .texto-banner {
+                    &:first-child {
+                        top: 28rem;
+                        padding-right: 0;
+    
+                        .banner-llamado {
+                            padding-left: 0;
+    
+                            h2 {
+                                font-size: $font108px;
+                                line-height: 120px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+
             .texto-banner {
                 &:first-child {
                     position: relative;

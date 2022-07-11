@@ -44,6 +44,23 @@ main {
                             background-color: $color-white;
                             font-weight: bold;
                         }
+
+                        &[disabled="disabled"] {
+                            background-color: #cccccc;
+                            border: 1px solid $gray-disable;
+                            color: $gray-disable;
+                        }
+                    }
+                }
+                
+                .error, .blocked-user {
+                    display: none;
+
+                    &.show {
+                        @include flex-row;
+                        @include flex-center;
+                        padding: 1rem;
+                        margin: 1rem 0;
                     }
                 }
 
@@ -78,11 +95,12 @@ main {
                                 display: block;
                                 border: 1px solid;
                                 margin: 10px 0;
-                                background-color: #ebebeb;
+                                background-color: $primary-color;
+                                border-radius: 0;
                                 font-weight: bold;
 
                                 &:hover {
-                                    background-color: #cccccc;
+                                    background-color: $primary-color-hover;
                                 }
                             }
                         }
@@ -94,7 +112,7 @@ main {
                       pointer-events: auto;
                     }
                     & > div {
-                        width: 400px;
+                        width: 350px;
                         position: absolute;
                         top: 50%;
                         left: 50%;

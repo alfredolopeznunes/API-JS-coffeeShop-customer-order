@@ -1,4 +1,4 @@
-//import { errorApi } from "./error.js";
+import { errorLogin } from "./components/error.js";
 export default class FetchWrapper {
     constructor(baseURL) {
         this.baseURL = baseURL;
@@ -7,6 +7,13 @@ export default class FetchWrapper {
     get(endpoint) {
         return fetch(this.baseURL + endpoint)
             .then(response => response.json());
+    }
+
+    getAdmin(endpoint, headers) {
+        return fetch(this.baseURL + endpoint, {
+            headers
+        })
+        .then(response => response.json())
     }
 
     put(endpoint, body) {
@@ -30,8 +37,8 @@ export default class FetchWrapper {
             body: JSON.stringify(body)
         })
         .then(response => response.json())
-        .catch(error => {
-            console.log(error);
+        .catch((error) => {
+           errorLogin(error);
         });
     }
 }

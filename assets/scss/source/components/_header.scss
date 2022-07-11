@@ -161,10 +161,27 @@ header {
                             &:hover {
                                 color: $primary-color-hover !important;
                             }
+
+                            &.ordenes-nav, &.usuarios-nav {
+                                padding: 1rem 1rem;
+                                border: 1px solid #e2e2e2;
+
+                            }
+
+
                         }
                     }
                 }
             }
+        }
+    }
+
+    .info-employee {
+        .employee-logged-in {
+            padding: 0.8rem 2rem;
+            font-size: 1.625rem;
+            color: $color-white;
+            border-right: 1px solid $color-white;
         }
     }
 

@@ -2,7 +2,7 @@ import { API } from "../globals.js";
 
 
 //break point
-const breakPoint = 'api/menus';
+const breakPoint = '/api/menus';
 
 
 //metodo get de la instancia

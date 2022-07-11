@@ -263,6 +263,16 @@ header .nav-menu .menuppal.is_active ul li a {
 header .nav-menu .menuppal.is_active ul li a:hover {
   color: #e69c00 !important;
 }
+header .nav-menu .menuppal.is_active ul li a.ordenes-nav, header .nav-menu .menuppal.is_active ul li a.usuarios-nav {
+  padding: 1rem 1rem;
+  border: 1px solid #e2e2e2;
+}
+header .info-employee .employee-logged-in {
+  padding: 0.8rem 2rem;
+  font-size: 1.625rem;
+  color: #ffffff;
+  border-right: 1px solid #ffffff;
+}
 header .btn {
   padding: 0.8rem 2rem;
   font-size: 1.625rem;
@@ -367,6 +377,24 @@ main .wrapper .banner-principal.menu-app {
 main .wrapper .banner-principal.login-app {
   background-image: url("../../images/login.png");
 }
+main .wrapper .banner-principal.usuarios-app {
+  background-image: url("../../images/usuarios.png");
+}
+main .wrapper .banner-principal.ordenes-app {
+  background-image: url("../../images/ordenes.png");
+}
+main .wrapper .banner-principal.ordenes-app .texto-banner:first-child {
+  top: 28rem;
+  padding-right: 0;
+}
+main .wrapper .banner-principal.ordenes-app .texto-banner:first-child .banner-llamado {
+  padding-left: 0;
+}
+main .wrapper .banner-principal.ordenes-app .texto-banner:first-child .banner-llamado h2 {
+  font-size: 6.75rem;
+  line-height: 120px;
+  text-align: center;
+}
 main .wrapper .banner-principal .texto-banner:first-child {
   position: relative;
   top: 20rem;
@@ -448,6 +476,8 @@ main .wrapper .carta h2 {
   font-size: 6.75rem;
   font-weight: 700;
   line-height: 120px;
+  max-width: 600px;
+  text-align: center;
 }
 main .wrapper .carta p {
   font-size: 1.5rem;
@@ -458,7 +488,7 @@ main .wrapper .carta p {
 main .wrapper .carta .listado-menu .item-lista {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 40px;
+  grid-column-gap: 50px;
   grid-row-gap: 50px;
 }
 main .wrapper .carta .listado-menu .item-lista .item-img img {
@@ -511,6 +541,15 @@ main .wrapper .carta .listado-menu .show-more button.btn:hover {
 }
 main .wrapper .carta .listado-menu .show-more button.btn:focus {
   box-shadow: none;
+}
+main .wrapper .carta:nth-child(even) .listado-menu .item-lista .item-img {
+  grid-column: 2;
+}
+main .wrapper .carta:nth-child(even) .listado-menu .item-lista .item-info {
+  grid-row: 1;
+}
+main .wrapper .carta:nth-child(even) .listado-menu .show-more {
+  justify-content: flex-start;
 }
 
 main .wrapper .login {
@@ -569,6 +608,22 @@ main .wrapper .login.login-background-img form#user-form input.btn:hover {
   background-color: #ffffff;
   font-weight: bold;
 }
+main .wrapper .login.login-background-img form#user-form input.btn[disabled=disabled] {
+  background-color: #cccccc;
+  border: 1px solid #707070;
+  color: #707070;
+}
+main .wrapper .login.login-background-img .error, main .wrapper .login.login-background-img .blocked-user {
+  display: none;
+}
+main .wrapper .login.login-background-img .error.show, main .wrapper .login.login-background-img .blocked-user.show {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem 0;
+}
 main .wrapper .login.login-background-img .info-user a {
   color: #000;
 }
@@ -600,11 +655,12 @@ main .wrapper .login.login-background-img .modal-window .modal-contenido ol butt
   display: block;
   border: 1px solid;
   margin: 10px 0;
-  background-color: #ebebeb;
+  background-color: #ffbe33;
+  border-radius: 0;
   font-weight: bold;
 }
 main .wrapper .login.login-background-img .modal-window .modal-contenido ol button.btn.add-user:hover, main .wrapper .login.login-background-img .modal-window .modal-contenido ul button.btn.add-user:hover {
-  background-color: #cccccc;
+  background-color: #e69c00;
 }
 main .wrapper .login.login-background-img .modal-window:target {
   visibility: visible;
@@ -612,7 +668,7 @@ main .wrapper .login.login-background-img .modal-window:target {
   pointer-events: auto;
 }
 main .wrapper .login.login-background-img .modal-window > div {
-  width: 400px;
+  width: 350px;
   position: absolute;
   top: 50%;
   left: 50%;
