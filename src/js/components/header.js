@@ -21,9 +21,9 @@ export class Header extends HTMLElement {
                             </div>
                         </nav>
                     </div>
-                    <div class="d-flex align-items-center">
+                    <div class="info-employee d-flex align-items-center">
                         <a href="tel:+86852346000" class="btn text-white me-2" tabindex="0" target="_blank">+86 852 346 000</a>
-                        <a href="../../../pages/iniciar-sesion.html" class="btn button-primary">Iniciar sesión</a>
+                        <a href="../../../pages/iniciar-sesion.html" id="boton-login" class="btn button-primary">Iniciar sesión</a>
                     </div>
                 </div>
             </div>
@@ -59,9 +59,15 @@ menu.addEventListener('click', toggleMenu, false);
 /* ------------------------------------------------------------------------------------- */
 // importar y mostrar items del nav menu
 import { getLiMenu } from "./nav-menu.js";
+import { crearLogin } from "./logged-in.js";
+import { agregarIntentosLogin } from "../components/error.js"
 
 document.addEventListener("DOMContentLoaded", () => {
     getLiMenu();
+    crearLogin();
+    
+     // Verificar intentos login y bloqueo por tiempo
+     agregarIntentosLogin(0);
 });
 
 

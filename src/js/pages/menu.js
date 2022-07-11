@@ -1,10 +1,7 @@
 import { API } from "../globals.js";
 import { pintarBanner } from "../components/banner.js";
 
-//break point
-const breakPoint = 'api/menus';
 
-//metodo get de la instancia
 const getCarta = (appClase) => {
 
     let tituloBanner = 'MENÚ';
@@ -25,8 +22,15 @@ const getCarta = (appClase) => {
 
     pintarBanner(tituloBanner, msjBanner, htmlAdicional, claseBanner);
     
+    
+    //break point
+    const breakPoint = '/api/menus';
+
+    //metodo get de la instancia
     API.get(breakPoint).then(data => {
+
         mostrarCarta(data);
+        
     }).catch(error => {
         console.log(error);
     })

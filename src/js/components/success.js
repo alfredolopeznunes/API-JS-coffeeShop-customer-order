@@ -1,13 +1,11 @@
-import { msjResponse } from "../pages/menu.js";
+import { guardarAcceso } from "../local-storage.js";
 
-function successApi() {
-    
-    msjResponse.classList.add('alert-success', 'show');
-    msjResponse.innerHTML = `Usuario autenticado correctamente`;
-    
-    setTimeout(() => {
-        msjResponse.classList.remove('alert-success', 'show');
-    }, 4000);
+const successLogin = (type, token) => {
+
+    guardarAcceso(type, token);
+
+    window.location.href = "/pages/ordenes.html";
+
 }
 
-export { successApi }
+export { successLogin }
