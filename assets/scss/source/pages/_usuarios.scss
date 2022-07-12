@@ -1,0 +1,41 @@
+main {
+    .wrapper {
+        .usuarios {
+            @include flex-col;
+            align-items: center;
+
+            .user-list {
+                display: grid;
+                grid-template-columns: 0.85fr 1.15fr;
+                grid-column-gap: 50px;
+                grid-row-gap: 50px;
+
+                .item-img img {
+                    object-fit: cover;
+                    object-position: top center;
+                    width: 40vw;
+                    height: 40vw;
+                    -moz-box-shadow: 0px 0px 5px 1px rgba(87, 87, 87, 0.5);
+                    box-shadow: 0px 0px 5px 1px rgb(87 87 87 / 50%);
+                    border-radius: 5px;
+                    padding: 20px;
+                }
+
+                .item-info {
+                    display: flex;
+                    flex-direction: column;
+
+                    h4.item-name,  span {
+                        font-size: 2.5rem;
+                        font-weight: bold;
+                        font-family: "Rufina", "Dancing Script", cursive;
+                    }
+                    
+                    .item-email, .item-phone {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+}
