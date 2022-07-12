@@ -26,8 +26,39 @@
             <div class="banner-principal"></div>
 
              <!-- aqui se pinta el front de la app -->
-            <div id="app">
-                <div class="orders orders-background-img pt-5 mb-5">
+            <div id="app" class="mt-5 mb-5">
+                <div class="orders pt-4 pb-4"></div>
+            </div>
+
+            <!-- nuevo pedido -->
+            <div class="nuevo-pedido-wrapper p-5 mt-5 mb-5">
+                <div class="nuevo-pedido nuevo-pedido-background-img pt-5 mb-5">
+                    <h2 class="pt-5">Nuevo pedido</h2>
+                    <form id="nuevo-pedido-form">
+                        <div class="mb-3">
+                            <select id="table-list" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+                                <option value="" selected>Mesa</option>
+                            </select>
+                        </div>
+                        <div class="row g-3 align-items-center">
+                            <div class="qty-product mb-3 col-auto">
+                                <select id="producto-list" class="form-select form-select-lg mb-3" aria-label=".form-select-lg">
+                                    <option value="" selected>Producto</option>
+                                </select>
+                            </div>
+                            <div class="qty-product mb-3 col-auto">
+                                <input type="number" id="qty" class="form-control" autocomplete="current-username" required placeholder="Cantidad" required />
+                            </div>
+                        </div>
+                        <div class="mb-3 col-auto">
+                            <button id="add-more" class="btn fadeIn fourth">Agregar más productos</button>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <input type="submit" id="order-create" class="btn fadeIn fourth" value="Crear pedido" />
+                            <div class="response"></div>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
      
