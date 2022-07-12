@@ -3,13 +3,15 @@
  import { successLogin } from "./success.js";
  
  //break point
- const breakPoint = '/oauth/token';
+ const endPoint = '/oauth/token';
 
  
  //Validamos el usuario que intenta logiearse
  const validateUser = (user, pass) => {
     //Pasamos el endpoint
-    API.post(breakPoint, {
+    API.post(endPoint, {
+        "Content-Type": "application/json"
+    },{
         
         client_id: user,
         client_secret: pass,

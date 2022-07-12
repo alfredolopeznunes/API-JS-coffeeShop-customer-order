@@ -18,4 +18,31 @@ function formatDate(date) {
     );
 }
 
-export { formatDate }
+function fechaBirthday(birthday) {
+    let fecha = new Date(birthday);
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+    return fecha.toLocaleDateString("es-ES", options)
+    
+}
+
+function mesFecha(value) {
+    let fechaMes = new Date(value);
+    let options = { month: 'long', day: 'numeric', year: 'numeric', };
+
+    return fechaMes.toLocaleDateString("en-EN", options)
+    
+}
+
+function hoursMinutes(hora) {
+    let time = new Date(hora);
+
+    return time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+
+    
+}
+
+
+
+
+export { formatDate, fechaBirthday, hoursMinutes, mesFecha }
