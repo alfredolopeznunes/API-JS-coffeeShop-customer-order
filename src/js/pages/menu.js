@@ -24,13 +24,13 @@ const getCarta = (appClase) => {
     
     
     //break point
-    const breakPoint = '/api/menus';
+    const endPoint = '/api/menus';
 
     //metodo get de la instancia
-    API.get(breakPoint).then(data => {
+    API.get(endPoint).then(data => {
 
         mostrarCarta(data);
-        
+
     }).catch(error => {
         console.log(error);
     })

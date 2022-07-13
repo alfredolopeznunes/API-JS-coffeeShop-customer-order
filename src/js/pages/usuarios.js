@@ -1,13 +1,9 @@
 import { API } from "../globals.js";
 import { pintarBanner } from "../components/banner.js";
-import { loggedIn } from "../components/logged-in.js";
+import { loggedIn, userType } from "../components/logged-in.js";
+import { fechaBirthday } from "../helpers.js";
 
 const getUsuarios = (appClase) => {
-
-    //Obtiene el tipo de usuario desde el local storage
-    let userType;
-    userType = JSON.parse(localStorage.getItem('fz-type'));
-    //console.log(userType);
 
     if(userType === 'admin' && loggedIn !== '' && loggedIn !== null) {
 
@@ -24,9 +20,7 @@ const getUsuarios = (appClase) => {
     const endPoint = '/api/users';
 
     //Access Token
-    const accessToken = userType = JSON.parse(localStorage.getItem('fz-loggedIn'));
-
-    //console.log(accessToken)
+    const accessToken = JSON.parse(localStorage.getItem('fz-loggedIn'));
 
     //api/users
     API.getAdmin(endPoint, {
@@ -48,21 +42,27 @@ const getUsuarios = (appClase) => {
 }
 
 
-//Pinta el menu
+//Pintar datos
+
 const mostrarUsuarios = (elementos) => {
     
     const appDom = document.querySelector('#app');
 
     Object.values(elementos).forEach(item => {
         const itemUser = `
-            <div id="${item.id}" class="user pt-5" data-user-id="${item.id}">
-            <div class="item-img">
-                <img src="${item.img}" />
-            </div>
-            <div class="item-info mt-3">
-                <h4 class="item-name">${item.name}</h4>
-                <span class="item-roles">${item.roles[0]}</span>
-            </div>
+            <div class="usuarios pt-4 pb-4">
+                <div id="${item.id}" class="user-list" data-user-id="${item.id}">
+                    <div class="item-img">
+                        <img src="${item.img}" />
+                    </div>
+                    <div class="item-info mt-3">
+                        <h4 class="item-name">${item.name}</h4>
+                        <span class="item-roles">${item.roles[0] === 'admin' ? 'Administrador' : 'Usuario'}</span>
+                        <span class="item-birthday">Cumpleaños: ${fechaBirthday(item.birthday)}</span>
+                        <span class="item-email">${item.email}</span>
+                        <span class="item-phone">${item.phone}</span>
+                    </div>
+                </div>
             </div>`;
         appDom.insertAdjacentHTML("beforeend", itemUser);
     });

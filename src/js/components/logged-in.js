@@ -3,6 +3,8 @@ import { loggedOut } from "./logged-out.js";
 
 const loggedIn = obtenerAcceso();
 
+//Obtiene el tipo de usuario desde el local storage
+const userType = JSON.parse(localStorage.getItem('fz-type'));
 
 const crearLogin = () => {
 
@@ -15,12 +17,10 @@ const crearLogin = () => {
 
 
         const logUser = JSON.parse(atob(loggedIn.split('.')[1]));
-        //console.log(logUser.roles[0]);
 
         //mensaje de bienvenida
         const infoEmployee = document.querySelector('.info-employee');
         infoEmployee.insertAdjacentHTML("afterbegin", `<div class="employee-logged-in"><span>Usuario: ${logUser.name}</span></div>`);
-
         
         // Boton de cerrar sesión
         const botonLogin = document.querySelector('#boton-login');
@@ -43,4 +43,4 @@ const crearLogin = () => {
         
 }
     
-    export { crearLogin, loggedIn }
+    export { crearLogin, loggedIn, userType }

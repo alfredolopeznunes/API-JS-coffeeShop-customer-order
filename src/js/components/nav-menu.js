@@ -2,13 +2,13 @@ import { API } from "../globals.js";
 
 
 //break point
-const breakPoint = '/api/menus';
+const endPoint = '/api/menus';
 
 
 //metodo get de la instancia
 export const getLiMenu = () => {
     
-    API.get(breakPoint).then(data => {
+    API.get(endPoint).then(data => {
         mostrarCarta(data);
     }).catch(error => {
         console.log(error);
