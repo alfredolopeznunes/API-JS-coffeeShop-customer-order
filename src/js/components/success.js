@@ -6,7 +6,6 @@ const successLogin = (type, token) => {
     guardarAcceso(type, token);
 
     window.location.href = "/pages/ordenes.html";
-
 }
 
 const successOrder = (respuesta) => {

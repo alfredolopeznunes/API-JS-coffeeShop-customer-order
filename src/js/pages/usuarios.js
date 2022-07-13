@@ -43,6 +43,7 @@ const getUsuarios = (appClase) => {
 
 
 //Pintar datos
+
 const mostrarUsuarios = (elementos) => {
     
     const appDom = document.querySelector('#app');

@@ -11,6 +11,7 @@ const productoList = document.querySelector('#producto-list');
 const qty = document.querySelector('#qty');
 const orderCreateButton = document.querySelector('#order-create');
 
+
 const getOrders = (appClase) => {
 
     if(loggedIn !== '' && loggedIn !== null) {
